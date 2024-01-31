@@ -1,12 +1,17 @@
-import { titleFont } from "@/config/fonts";
+
+import { Title } from "@/mainComponents/ui/title/Title";
+import { initialData } from "@/seed/seed";
 import Image from "next/image";
 
 export default function Home() {
 
 
+  const products = initialData.products
+
+
   return (
-    <div className="flex ">
-      <h1>Arde papi uff que calor!!!</h1><h1 className={titleFont.className}>Arde papi uff que calor!!!</h1>
-    </div>
+    <>
+      <Title title={"Tienda"} subtitle={"Todos los productos"} classname={"mb-2"} />
+    </>
   );
 }
