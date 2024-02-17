@@ -1,10 +1,15 @@
+import { ProductsGrid } from "@/mainComponents/products/ProductsGrid";
+import { Title } from "@/mainComponents/ui/title/Title";
+import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
 
+
+const products = initialData.products;
 
 
 interface Props {
     params: {
-        id: string;
+        id: Category;
     }
 }
 
@@ -12,13 +17,30 @@ export default function ({ params }: Props) {
 
     const { id } = params
 
-    if (id === "kids") {
-        notFound();
+    const productFilerGender = products.filter(products => products.gender === id)
+
+    const genderTitle: Record<Category, string> = {
+        'men': 'Hombres',
+        'women': 'Mujeres',
+        'kid': 'Niños',
+        'unisex': 'unisex'
     }
 
+    // if (id === "kids") {
+    //     notFound();
+    // }
+
     return (
-        <div>
-            <h1>Estoy en la pantalla de Categorias por id --- {id} </h1>
-        </div>
+
+        <>
+            <Title
+                title={`Articulos de ${genderTitle[id]}`}
+                subtitle={`Nuestra mejor selección para ${genderTitle[id]}`}
+                classname={"mb-2  text-blue-600"}
+            />
+
+            <ProductsGrid products={productFilerGender} />
+        </>
     );
+
 } 
