@@ -1,5 +1,5 @@
 import { titleFont } from "@/config/fonts";
-import { SizeSelector } from "@/mainComponents";
+import { ProductSliderShowme, QuantitySelector, SizeSelector } from "@/mainComponents";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
 
@@ -25,13 +25,15 @@ export default function ({ params }: Props) {
     }
 
     return (
-        <div className="m-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3 bg-blue-300">
+        <div className="m-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3">
 
             {/* SliceShow */}
-            <div className="col-span-1 md:col-span-2 bg-orange-300">
-                holii
+            <div className="col-span-1 md:col-span-2">
 
-
+                <ProductSliderShowme
+                    images={product.images}
+                    title={product.title}
+                />
             </div>
 
 
@@ -46,9 +48,12 @@ export default function ({ params }: Props) {
                 </p>
 
                 {/* slector de tallas */}
+                <SizeSelector selecterSize={product.sizes[1]} availableSizes={product.sizes} />
+
 
                 {/* selctior de cantidad */}
-                <SizeSelector selecterSize={product.sizes[1]} availableSizes={product.sizes} />
+                <QuantitySelector quantity={2} />
+
 
                 {/* Boton agregar al cartto */}
                 <button className="btn-primary my-5 rounded-s-sm">
