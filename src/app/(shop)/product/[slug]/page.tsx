@@ -1,5 +1,5 @@
 import { titleFont } from "@/config/fonts";
-import { ProductSliderShowme, QuantitySelector, SizeSelector } from "@/mainComponents";
+import { ProductSliderShowMobile, ProductSliderShowme, QuantitySelector, SizeSelector } from "@/mainComponents";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
 
@@ -27,13 +27,23 @@ export default function ({ params }: Props) {
     return (
         <div className="m-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3">
 
-            {/* SliceShow */}
             <div className="col-span-1 md:col-span-2">
 
+
+                {/* SliceShow */}
                 <ProductSliderShowme
                     images={product.images}
                     title={product.title}
+                    className="hidden md:block"
                 />
+
+                {/* SliceShow Mobile */}
+                <ProductSliderShowMobile
+                    images={product.images}
+                    title={product.title}
+                    className="block md:hidden"
+                />
+
             </div>
 
 
