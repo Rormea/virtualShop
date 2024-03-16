@@ -2,6 +2,7 @@
 
 export * from "./ui/top-menu/TopMenu";
 export * from "./ui/sidebar/SideBar";
+export * from "./ui/footer/Footer";
 
 
 export * from "./product/size-selector/SizeSelector";

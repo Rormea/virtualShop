@@ -3,6 +3,7 @@ import { Title } from "@/mainComponents/ui/title/Title";
 import { initialData } from "@/seed/seed";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 
 const productsInCart = [
@@ -15,7 +16,7 @@ const productsInCart = [
 export default function () {
 
 
-
+    // redirect('/empty');
 
     return (
 
@@ -67,7 +68,7 @@ export default function () {
                     </div>
 
                     {/* sumary del carrito */}
-                    <div className="bg-green-300 rounded-xl shadow-lg p-7" >
+                    <div className=" rounded-xl shadow-lg p-7 h-fit" >
 
                         <h2 className="text-2xl mb-4" >Resumen de Peiddo</h2>
 
