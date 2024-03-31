@@ -98,7 +98,7 @@ export default function () {
 
                         <div>
                             <Link href={"/orders/123"} className="flex btn-primary mt-5 justify-center rounded-sm">
-                                Confrimar Ordern
+                                Confrimar Orden
                             </Link>
                         </div>
                     </div>
